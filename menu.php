@@ -67,7 +67,7 @@
                                 class="fa arrow"></span></a>
                     <ul class="nav-second-level nav" aria-expanded="true">
                         <li><a class="m_link" id="showUser" href="#">Utilisateurs</a></li>
-                        <li><a class="m_link" id="showDateIntegration" href="#">Intégration</a></li>
+                        <li><a class="m_link" id="showIAintegration" href="#">Intégration</a></li>
                     </ul>
                 </li>
 

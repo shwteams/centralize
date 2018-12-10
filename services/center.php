@@ -25,6 +25,7 @@ include_once '../composant/com_collected_not_production/collectedNotProduction.p
 include_once '../composant/com_receipt/receipt.php';
 include_once '../composant/com_company_contract/companyContract.php';
 include_once '../composant/com_reassur/reassur.php';
+include_once '../composant/com_IAintegration/IAintegration.php';
 
 if (isset($_GET["task"])) {
     $task = $_GET["task"];
@@ -93,10 +94,17 @@ switch ($task) {
     case 'showAllNotCollectedProd':
         echo showAllNotCollectedProd();
         break;
+    case 'showIAintegration':
+        echo showIAintegration();
+        break;
     default:
         echo showHomeAdminPage();
         //echo "Dashbord";
         break;
+}
+function showIAintegration()
+{
+    IAintegration::showIAintegration();
 }
 function showCompagnyContract()
 {
