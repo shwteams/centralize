@@ -19,7 +19,7 @@ class IAintegration
                 <div class="col-sm-6 text-right">
                     <ol class="breadcrumb">
                         <li><a href="javascript: void(0);"><i class="fa fa-home"></i></a></li>
-                        <li>Tableau de bord</li> <li>Encaissement</li>  <li>Quittance</li>
+                        <li>Tableau de bord</li> <li>Security</li>  <li>IA integration</li>
                     </ol>
                 </div>
             </div>
@@ -27,10 +27,10 @@ class IAintegration
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    Liste des quittances
+                    Liste des intégrations
                     <div class="pull-right">
                         <button type="button" class="btn btn-danger btn-outline btn-sm" id="modal_add_key" data-toggle="modal">
-                            <i class="fa fa-plus"></i> Ajouter
+                            <i class="fa fa-plus"></i> Intégration
                         </button>
                     </div>
                 </div>
@@ -38,8 +38,8 @@ class IAintegration
                     <table class="table table-striped table-hover clo" id="examples" >
                         <thead>
                         <tr>
-                            <td>Quittances</td>
-                            <td>Lettrages</td>
+                            <td>Utilisateurs</td>
+                            <td>Date d'intégration</td>
                             <td>Actions</td>
                             <td></td>
                         </tr>
