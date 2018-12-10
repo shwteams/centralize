@@ -1,0 +1,47 @@
+/* 
+    Document   : style
+    Created on : 13 oct. 2014, 13:04:46
+    Author     : Ecap
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+:root {
+
+}
+
+#header-index-admin{
+    margin-top: 10px;
+    padding: 10px;
+}
+
+/*.column-data-table,#examples th{
+    text-align: center;
+}*/
+
+.btn_action_custom{
+    margin:  0 5px 0 5px;
+}
+.btn-action-custom{
+    display: inline-block;
+    margin: 0 3px 0 3px;
+    cursor: pointer;
+}
+.btn-action-edit{
+    color: green;
+}
+
+.btn-action-delete{
+    color: red
+}
+.modal{
+    top: 25%;
+}
+.btn[id="modal_add_key"],.btn[id="btn-send-key"]{
+    margin-bottom:  10px;
+}
