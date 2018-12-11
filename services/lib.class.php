@@ -592,12 +592,16 @@ Class Lib {
                         if($primaryKey <> $table_name)
                         {
                             //determinons la clé etrangère
+                            if(preg_match("/_ID/i", $item_result['Field']) || preg_match("/lg_/i", $item_result['Field']))
+                            {
+                                $fielId = str_replace('_ID', '', $item_result['Field']);
+                                $fielId = str_replace('str_', '', $fielId);
+                                $fielId = str_replace('lg_', '', $fielId);
+                                $foreignKey = str_replace('_', '', $fielId);
+                                $foreignKey = strtolower($foreignKey);
 
-                            $fielId = str_replace('_ID', '', $item_result['Field']);
-                            $fielId = str_replace('str_', '', $fielId);
-                            $foreignKey = str_replace('lg_', '', $fielId);
-
-                            //var_dump($primaryKey);
+                                var_dump($foreignKey);
+                            }
                             $arraySql[] = array(
                                 "field" =>$item_result['Field']
                             );

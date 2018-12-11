@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d3f1539-5f63-47b9-be0c-5e0cb73ba0ba" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composant/com_IAintegration/IAintegration.js" beforeDir="false" afterPath="$PROJECT_DIR$/composant/com_IAintegration/IAintegration.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composant/com_IAintegration/IAintegration.php" beforeDir="false" afterPath="$PROJECT_DIR$/composant/com_IAintegration/IAintegration.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composant/com_IAintegration/controllerIAIntegration.php" beforeDir="false" afterPath="$PROJECT_DIR$/composant/com_IAintegration/controllerIAIntegration.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composant/com_not_collected_production/extractions/PRODUCTION_non_encaiss&amp;eacute;-2018-12-10_17-44-41-rytjykhjuyj.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composant/com_not_collected_production/extractions/encaissement_sans_production-2018-12-10_17-46-29-rytjykhjuyj.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/services/lib.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/services/lib.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/lib.php" beforeDir="false" afterPath="$PROJECT_DIR$/services/lib.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/session.php" beforeDir="false" afterPath="$PROJECT_DIR$/services/session.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +26,7 @@
         <counts>
           <entry key="js" value="744" />
           <entry key="md" value="202" />
-          <entry key="php" value="2425" />
+          <entry key="php" value="2435" />
           <entry key="txt" value="64" />
         </counts>
       </usages-collector>
@@ -40,7 +35,7 @@
           <entry key="HTML" value="1" />
           <entry key="JavaScript" value="743" />
           <entry key="Markdown" value="202" />
-          <entry key="PHP" value="2425" />
+          <entry key="PHP" value="2435" />
           <entry key="PLAIN_TEXT" value="64" />
         </counts>
       </usages-collector>
@@ -124,8 +119,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/services/lib.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="582" column="85" selection-start-line="582" selection-start-column="85" selection-end-line="582" selection-end-column="85" />
+            <state relative-caret-position="541">
+              <caret line="601" column="32" selection-start-line="601" selection-start-column="32" selection-end-line="601" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -256,7 +251,7 @@
       <option name="presentableId" value="Default" />
       <updated>1544443490699</updated>
       <workItem from="1544443496692" duration="16417000" />
-      <workItem from="1544516213729" duration="7029000" />
+      <workItem from="1544516213729" duration="7692000" />
     </task>
     <task id="LOCAL-00001" summary="Readme updating">
       <created>1544443868272</created>
@@ -276,13 +271,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23446000" />
+    <option name="totallyTimeSpent" value="24109000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25302014" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25302014" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -295,7 +290,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32907802" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32907802" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32907802" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -425,8 +420,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/services/lib.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="582" column="85" selection-start-line="582" selection-start-column="85" selection-end-line="582" selection-end-column="85" />
+        <state relative-caret-position="541">
+          <caret line="601" column="32" selection-start-line="601" selection-start-column="32" selection-end-line="601" selection-end-column="32" />
         </state>
       </provider>
     </entry>
