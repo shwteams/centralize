@@ -231,7 +231,6 @@ if(isset($_SESSION['str_SECURITY_ID']) && !empty($_SESSION['str_SECURITY_ID']))
                     }
                 });
             });
-
             function haveSession()
             {
                 $.get("services/session.php", function(json, e){
@@ -246,7 +245,6 @@ if(isset($_SESSION['str_SECURITY_ID']) && !empty($_SESSION['str_SECURITY_ID']))
                     }
                 });
             }
-            
         </script>
 
         <script src="services/js/float-custom.js"></script>

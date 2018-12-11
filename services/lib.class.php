@@ -599,8 +599,23 @@ Class Lib {
                                 $fielId = str_replace('lg_', '', $fielId);
                                 $foreignKey = str_replace('_', '', $fielId);
                                 $foreignKey = strtolower($foreignKey);
+                                /**
+                                 * Vraiment frère yako
+                                 * S'aurait été bien de faire là une fonction récurcive mais je n'y suis pas arrivé
+                                 * J'ai donc fais ce que tu vois ;) je compte sur toi pour faire mieux. Rédigé le 11/12/2018
+                                 */
+                                $childrenTable = "t_".$foreignKey;
+                                //var_dump(Lib::tablesDescription($db, $childrenTable));
+                                /*$sql2 = 'DESCRIBE '.$childrenTable;
+                                $stmt2 = $db->query($sql2);
+                                $result2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+                                foreach ($result2 as $item_result2) {
+                                    if(!in_array($item_result2['Field'], $arrayExecption))
+                                    {
 
-                                var_dump($foreignKey);
+                                    }
+                                }
+                                var_dump($foreignKey);*/
                             }
                             $arraySql[] = array(
                                 "field" =>$item_result['Field']
