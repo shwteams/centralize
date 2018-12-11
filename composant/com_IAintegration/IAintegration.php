@@ -10,7 +10,7 @@ class IAintegration
 {
     public static function showIAintegration(){
 ?>
-        <script src="composant/com_IAintegration/integration.js"></script>
+        <script src="composant/com_IAintegration/IAintegration.js"></script>
         <div class="page-header">
             <div class="row">
                 <div class="col-sm-6">
@@ -59,22 +59,24 @@ class IAintegration
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">Ajouter</h4>
                     </div>
-                    <form class="form-horizontal" role="form" id="add_key_form">
+                    <form class="form-horizontal" role="form" id="add_key_form" >
                         <div class="modal-body">
                             <div class="box-body">
                                 <div class="form-group">
-                                    <label for="str_QUITTANCE" class="col-sm-4 control-label">Quittance <span class="require">*</span> :</label>
-                                    <div class="col-sm-8">
-                                        <input class="form-control" id="str_QUITTANCE" name="str_QUITTANCE" placeholder="Quittance" type="text" required="">
+                                    <div class="col-xs-12 col-xs-offset-2" >
+                                        <input type="file" accept=".csv" name="str_ILLUSTRATION" class="str_ILLUSTRATION" data-buttonText="Charger fichier utilisateurs" data-buttonName="btn-primary" data-iconName="glyphicon glyphicon-inbox" data-buttonBefore="true" data-placeholder="Aucun fichier selectionné" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="str_LETTRAGE" class="col-sm-4 control-label">Lettrage <span class="require">*</span> :</label>
+                                    <label for="str_TABLES" class="col-sm-4 control-label">Tables <span class="require">*</span> :</label>
                                     <div class="col-sm-8">
-                                        <select name="str_LETTRAGE" id="str_LETTRAGE" style="width: 100%">
-                                            <option value=""></option>
+                                        <select name="str_TABLES" id="str_TABLES" style="width: 100%">
+                                            <option value="" >Selectionner une table</option>
                                         </select>
                                     </div>
+                                </div>
+                                <div id="putSelect">
+
                                 </div>
                             </div>
                         </div>

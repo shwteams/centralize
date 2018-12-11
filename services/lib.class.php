@@ -463,5 +463,159 @@ Class Lib {
         return array('file' =>$file, 'code_statut' => 1);
     }
 
+    public static function getAlphabetiqueWord(){
+        $arrayJson = array();
+        $arraySql = array();
+        $message = "";
+        $code_statut = "";
+        $code_statut = "0";
+        $intResult = 0;
+        $lettre = "";
+        foreach(range('A', 'Z') as $letter) {
+            $arraySql[] = array('str_WORD' => strtoupper($letter));
+            if($letter=="Z"){
+                foreach(range('A', 'Z') as $lettres) {
+                    foreach(range('A', 'Z') as $letters) {
+                        $arraySql[] = array('str_WORD' => strtoupper($lettres).''.strtoupper($letters));
+                    }
+                }
+            }
+            $intResult++;
+            $code_statut = "1";
+        }
+        $arrayJson["results"] = $arraySql;
+        $arrayJson["total"] = $intResult;
+        $arrayJson["code_statut"] = $code_statut;
+        echo "[" . json_encode($arrayJson) . "]";
+    }
+
+    /**
+     * @param $db
+     * @return json 'tables' return all tables in database
+     */
+    public static function getDatabaseTable($db)
+    {
+        $arrayJson = array();
+        $message = "";
+        $intResult = 0;
+        $code_statut = "";
+        $str_STATUT = "delete";
+        $sucess = 0;
+        $i = 0;
+        $tables = array();
+        //recuperation des tables de la base de données
+
+        $sql = "SHOW TABLES";
+        try {
+            $stmt = $db->query($sql);
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($result as $item_result) {
+                $arraySql[] = array(
+                            "tables" =>$item_result['Tables_in_'.strtolower(DBNAME)]
+                );
+            }
+        } catch (PDOException $e) {
+            die("Erreur ! : " . $e->getMessage());
+            return false;
+        }
+        echo  json_encode($arraySql);
+    }
+    public static function getXLSrow()
+    {
+        $arrayJson = array();
+        $arraySql = array();
+        $message = "";
+        $code_statut = "";
+        $code_statut = "0";
+        $intResult = 0;
+        $lettre = "";
+        $cpt = -1;
+        foreach(range('A', 'Z') as $letter) {
+            $cpt++;
+            $arraySql[] = array(
+                'numRow' => $cpt,
+                'str_WORD' => strtoupper($letter)
+            );
+            if($letter=="Z"){
+                foreach(range('A', 'Z') as $lettres) {
+                    foreach(range('A', 'Z') as $letters) {
+                        $cpt++;
+                        $arraySql[] = array(
+                            'numRow' => $cpt,
+                            'str_WORD' => strtoupper($lettres).''.strtoupper($letters)
+                        );
+                    }
+                }
+            }
+            $intResult++;
+            $code_statut = "1";
+        }
+        $arrayJson["results"] = $arraySql;
+        $arrayJson["cpt"] = $cpt;
+        $arrayJson["total"] = $intResult;
+        $arrayJson["code_statut"] = $code_statut;
+        echo "[" . json_encode($arrayJson) . "]";
+    }
+    public static function tablesDescription($db, $table)
+    {
+        $arrayJson = array();
+        $message = "";
+        $intResult = 0;
+        $code_statut = "";
+        $str_STATUT = "delete";
+        $sucess = 0;
+        $i = 0;
+        $return = NULL;
+        $tables = array();
+        //construction name table
+        $table_name = str_replace('t_', '', $table);
+        $table_name = str_replace('_', '', $table_name);
+        $arrayExecption = ['dt_UPDATED', 'str_UPDATED_BY', 'dt_CREATED', 'str_CREATED_BY', 'str_STATUT'];
+        //determinons le nombre de colonne de la table
+        $sql = 'DESCRIBE '.$table;
+        try {
+            $stmt = $db->query($sql);
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($result as $item_result) {
+                if(!in_array($item_result['Field'], $arrayExecption))
+                {
+                    //determine s'il s'agit d'une clé primaire
+                    if(preg_match("/_ID/i", $item_result['Field']) || preg_match("/lg_/i", $item_result['Field']))
+                    {
+                        //recherche de la clé primaire, pour la retiré de l'affichage
+                        $fielId = str_replace('_ID', '', $item_result['Field']);
+                        $fielId = str_replace('str_', '', $fielId);
+                        $fielId = str_replace('lg_', '', $fielId);
+                        $primaryKey = str_replace('_', '', $fielId);
+                        $primaryKey = strtolower($primaryKey);
+
+                        if($primaryKey <> $table_name)
+                        {
+                            //determinons la clé etrangère
+
+                            $fielId = str_replace('_ID', '', $item_result['Field']);
+                            $fielId = str_replace('str_', '', $fielId);
+                            $foreignKey = str_replace('lg_', '', $fielId);
+
+                            //var_dump($primaryKey);
+                            $arraySql[] = array(
+                                "field" =>$item_result['Field']
+                            );
+                        }
+                    }
+                    else
+                    {
+                        $arraySql[] = array(
+                            "field" =>$item_result['Field']
+                        );
+                    }
+                }
+            }
+        } catch (PDOException $e) {
+            die("Erreur ! : " . $e->getMessage());
+            return false;
+        }
+        echo json_encode($arraySql);
+    }
 }
 ?>

@@ -6,9 +6,9 @@ CONTIENT TOUTES LES FONCTIONS DE MON APPLICATIONS
     ini_set('display_errors', TRUE);
     ini_set('display_startup_errors', TRUE);
     ini_set('session.gc_maxlifetime', 36000);
-    include_once('classes/PHPExcel.php');
+    //include_once('classes/PHPExcel.php');
     include_once('lib.class.php');
-    include_once('classes/PHPExcel/Reader/Excel2007.php');
+    //include_once('classes/PHPExcel/Reader/Excel2007.php');
 
     if (!isset($_SESSION)) {
 	  session_start();
@@ -900,29 +900,7 @@ CONTIENT TOUTES LES FONCTIONS DE MON APPLICATIONS
         }
     }
     function getAlphabetiqueWord(){
-        $arrayJson = array();
-        $arraySql = array();
-        $message = "";
-        $code_statut = "";
-        $code_statut = "0";
-        $intResult = 0;
-        $lettre = "";
-        foreach(range('A', 'Z') as $letter) {
-            $arraySql[] = array('str_WORD' => strtoupper($letter));
-            if($letter=="Z"){
-                foreach(range('A', 'Z') as $lettres) {
-                    foreach(range('A', 'Z') as $letters) {
-                        $arraySql[] = array('str_WORD' => strtoupper($lettres).''.strtoupper($letters));
-                    }
-                }
-            }
-            $intResult++;
-            $code_statut = "1";
-        }
-        $arrayJson["results"] = $arraySql;
-        $arrayJson["total"] = $intResult;
-        $arrayJson["code_statut"] = $code_statut;
-        echo "[" . json_encode($arrayJson) . "]";
+        Lib::getXLSrow();
     }
     function getAllPartner( $str_PARTNER_ID, $db) {
         $arrayJson = array();
@@ -3802,7 +3780,6 @@ CONTIENT TOUTES LES FONCTIONS DE MON APPLICATIONS
         $code_statut = "";
         $str_STATUT = "delete";
         $sucess = 0;
-
         if ($str_SINISTRE_ID == "" || $str_SINISTRE_ID == null) {
             $str_SINISTRE_ID = "%%";
         }
@@ -3884,10 +3861,74 @@ CONTIENT TOUTES LES FONCTIONS DE MON APPLICATIONS
             return false;
         }
 
-
         $arrayJson["results"] = $message;
         $arrayJson["total"] = $sucess;
         $arrayJson["code_statut"] = $code_statut;
         echo "[" . json_encode($arrayJson) . "]";
     }
+    function getDatabaseTables($db)
+    {
+        Lib::getDatabaseTable($db);
+    }
+    function describeTable($db, $table)
+    {
+        Lib::tablesDescription($db, $table);
+    }
+function backup_tables($host,$user,$pass,$name,$tables = '*')
+{
+    //get all of the tables
+    if($tables == '*')
+    {
+        $tables = array();
+        $result = mysql_query('SHOW TABLES');
+        while($row = mysql_fetch_row($result))
+        {
+            $tables[] = $row[0];
+        }
+    }
+    else
+    {
+        $tables = is_array($tables) ? $tables : explode(',',$tables);
+    }
+    $return=NULL;
+    //cycle through
+    foreach($tables as $table)
+    {
+        $result = mysql_query('SELECT * FROM '.$table);
+        $num_fields = mysql_num_fields($result);
+
+        $row2 = mysql_fetch_row(mysql_query('SHOW CREATE TABLE '.$table));
+        $return.= "\n\n".$row2[1].";\n\n";
+
+        for ($i = 0; $i < $num_fields; $i++)
+        {
+            while($row = mysql_fetch_row($result))
+            {
+                $return.= 'INSERT INTO '.$table.' VALUES(';
+                for($j=0; $j<$num_fields; $j++)
+                {
+                    $row[$j] = addslashes($row[$j]);
+                    $row[$j] = preg_replace("#\n#","\\n",$row[$j]);
+                    if (isset($row[$j])) { $return.= '"'.$row[$j].'"' ; } else { $return.= '""'; }
+                    if ($j<($num_fields-1)) { $return.= ','; }
+                }
+                $return.= ");\n";
+            }
+        }
+        $return.="\n\n\n";
+    }
+
+    //save file
+    $path = 'backup/autosave/db-auto-backup-'.date("d-m-Y").'-'.(md5(implode(',',$tables))).'.sql';
+
+    $filename = $path;
+
+
+    if (!file_exists($filename)) {
+        $handle = fopen($path,'w+');
+        fwrite($handle,$return);
+        fclose($handle);
+    }
+
+}
 ?>
