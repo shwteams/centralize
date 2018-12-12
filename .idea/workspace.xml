@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d3f1539-5f63-47b9-be0c-5e0cb73ba0ba" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/composant/com_collection/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/composant/com_collected_not_production/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/composant/com_collected_production/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/composant/com_not_collected_production/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/lib.php" beforeDir="false" afterPath="$PROJECT_DIR$/services/lib.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,11 +26,11 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="gitignore" value="11" />
+          <entry key="gitignore" value="29" />
           <entry key="js" value="767" />
           <entry key="md" value="202" />
           <entry key="php" value="3672" />
-          <entry key="txt" value="134" />
+          <entry key="txt" value="160" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -38,12 +39,12 @@
           <entry key="JavaScript" value="766" />
           <entry key="Markdown" value="202" />
           <entry key="PHP" value="3672" />
-          <entry key="PLAIN_TEXT" value="145" />
+          <entry key="PLAIN_TEXT" value="189" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="gitignore" value="2" />
+          <entry key="gitignore" value="5" />
           <entry key="js" value="6" />
           <entry key="md" value="1" />
           <entry key="php" value="17" />
@@ -54,7 +55,7 @@
           <entry key="JavaScript" value="6" />
           <entry key="Markdown" value="1" />
           <entry key="PHP" value="17" />
-          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="PLAIN_TEXT" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.new.class">
@@ -64,17 +65,11 @@
       </usages-collector>
     </session>
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="centralize" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/lib.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10557">
-              <caret line="621" column="30" selection-start-line="621" selection-start-column="30" selection-end-line="621" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/services/lib.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -93,11 +88,34 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/composant/com_collection/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <caret column="10" lean-forward="true" selection-start-column="10" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/composant/com_collected_not_production/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="10" selection-start-column="10" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/composant/com_collected_production/.gitignore">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/composant/com_not_collected_production/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="12" lean-forward="true" selection-start-column="12" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -173,6 +191,7 @@
         <option value="$PROJECT_DIR$/services/lib.php" />
         <option value="$PROJECT_DIR$/composant/com_collection/documents/.gitignore" />
         <option value="$PROJECT_DIR$/composant/com_collection/.gitignore" />
+        <option value="$PROJECT_DIR$/composant/com_collected_not_production/.gitignore" />
       </list>
     </option>
   </component>
@@ -228,13 +247,6 @@
             <path>
               <item name="centralize" type="b2602c69:ProjectViewProjectNode" />
               <item name="centralize" type="462c0819:PsiDirectoryNode" />
-              <item name="composant" type="462c0819:PsiDirectoryNode" />
-              <item name="com_collection" type="462c0819:PsiDirectoryNode" />
-              <item name="documents" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="centralize" type="b2602c69:ProjectViewProjectNode" />
-              <item name="centralize" type="462c0819:PsiDirectoryNode" />
               <item name="db" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -254,6 +266,9 @@
       <recent name="E:\developpements\www\centralize\composant\com_collection" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\developpements\www\centralize\composant\com_not_collected_production" />
+      <recent name="E:\developpements\www\centralize\composant\com_collected_production" />
+      <recent name="E:\developpements\www\centralize\composant\com_collected_not_production" />
       <recent name="E:\developpements\www\centralize\composant\com_collection\documents" />
     </key>
   </component>
@@ -291,7 +306,7 @@
       <updated>1544443490699</updated>
       <workItem from="1544443496692" duration="16417000" />
       <workItem from="1544516213729" duration="18875000" />
-      <workItem from="1544601716091" duration="6480000" />
+      <workItem from="1544601716091" duration="6732000" />
     </task>
     <task id="LOCAL-00001" summary="Readme updating">
       <created>1544443868272</created>
@@ -321,19 +336,26 @@
       <option name="project" value="LOCAL" />
       <updated>1544602200590</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Ingnore all documents">
+      <created>1544617098622</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1544617098622</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41772000" />
+    <option name="totallyTimeSpent" value="42024000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18724832" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4989429" visible="true" weight="0.18724832" />
+      <window_info id="Structure" order="1" sideWeight="0.5010571" side_tool="true" weight="0.18724832" />
+      <window_info id="Favorites" order="2" sideWeight="0.5010571" side_tool="true" weight="0.18724832" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -343,9 +365,9 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49932885" weight="0.32907802" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49932885" weight="0.32907802" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50067115" side_tool="true" visible="true" weight="0.32907802" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4986577" weight="0.32907802" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49932885" visible="true" weight="0.32907802" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5013423" side_tool="true" weight="0.32907802" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32907802" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -356,6 +378,32 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -364,7 +412,8 @@
     <MESSAGE value="Create the integration system database" />
     <MESSAGE value="Modification de la page index" />
     <MESSAGE value="Update of fonction session out disconnect" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update of fonction session out disconnect" />
+    <MESSAGE value="Ingnore all documents" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ingnore all documents" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/readme.md">
@@ -513,6 +562,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="10" lean-forward="true" selection-start-column="10" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composant/com_collected_not_production/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="10" selection-start-column="10" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composant/com_collected_production/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composant/com_not_collected_production/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" lean-forward="true" selection-start-column="12" selection-end-column="12" />
         </state>
       </provider>
     </entry>
