@@ -234,7 +234,7 @@ if(isset($_SESSION['str_SECURITY_ID']) && !empty($_SESSION['str_SECURITY_ID']))
             function haveSession()
             {
                 $.get("services/session.php", function(json, e){
-                    if(json != "")
+                    if(json == "-1")
                     {
                         let obj = $.parseJSON(json);
                         if(obj[0].code_statut = "-1")

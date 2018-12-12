@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="7d3f1539-5f63-47b9-be0c-5e0cb73ba0ba" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composant/com_collection/collection.js" beforeDir="false" afterPath="$PROJECT_DIR$/composant/com_collection/collection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composant/com_collection/collection.php" beforeDir="false" afterPath="$PROJECT_DIR$/composant/com_collection/collection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composant/com_collection/controlerCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/composant/com_collection/controlerCollection.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/lib.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/services/lib.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/lib.php" beforeDir="false" afterPath="$PROJECT_DIR$/services/lib.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,41 +19,42 @@
     <session id="541376642">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.56" value="1" />
           <entry key="project.open.time.74" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="744" />
+          <entry key="js" value="767" />
           <entry key="md" value="202" />
-          <entry key="php" value="2841" />
-          <entry key="txt" value="64" />
+          <entry key="php" value="3225" />
+          <entry key="txt" value="93" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="1" />
-          <entry key="JavaScript" value="743" />
+          <entry key="JavaScript" value="766" />
           <entry key="Markdown" value="202" />
-          <entry key="PHP" value="2841" />
-          <entry key="PLAIN_TEXT" value="64" />
+          <entry key="PHP" value="3225" />
+          <entry key="PLAIN_TEXT" value="93" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="js" value="4" />
+          <entry key="js" value="6" />
           <entry key="md" value="1" />
-          <entry key="php" value="14" />
+          <entry key="php" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JavaScript" value="4" />
+          <entry key="JavaScript" value="6" />
           <entry key="Markdown" value="1" />
-          <entry key="PHP" value="14" />
+          <entry key="PHP" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.new.class">
@@ -64,37 +67,46 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/services/lib.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="10557">
+              <caret line="621" column="30" selection-start-line="621" selection-start-column="30" selection-end-line="621" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/services/lib.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="521">
-              <caret line="3874" column="26" lean-forward="true" selection-start-line="3874" selection-start-column="26" selection-end-line="3874" selection-end-column="26" />
+            <state relative-caret-position="15419">
+              <caret line="907" column="14" selection-start-line="907" selection-start-column="14" selection-end-line="907" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/index.php">
+        <entry file="file://$PROJECT_DIR$/composant/com_collection/collection.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+            <state relative-caret-position="1088">
+              <caret line="64" column="79" selection-start-line="64" selection-start-column="66" selection-end-line="64" selection-end-column="79" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/composant/com_IAintegration/IAintegration.php">
+        <entry file="file://$PROJECT_DIR$/composant/com_collection/controlerCollection.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="76" column="38" selection-start-line="76" selection-start-column="38" selection-end-line="76" selection-end-column="38" />
+            <state relative-caret-position="901">
+              <caret line="53" column="99" selection-start-line="53" selection-start-column="4" selection-end-line="53" selection-end-column="99" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/composant/com_IAintegration/IAintegration.js">
+        <entry file="file://$PROJECT_DIR$/composant/com_collection/collection.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="26" column="98" selection-start-line="26" selection-start-column="98" selection-end-line="26" selection-end-column="98" />
+            <state relative-caret-position="884">
+              <caret line="52" column="42" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -102,30 +114,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="232" column="15" selection-start-line="232" selection-start-column="15" selection-end-line="232" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/composant/com_IAintegration/controllerIAIntegration.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="14" lean-forward="true" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/lib.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="490">
-              <caret line="636" column="12" selection-start-line="636" selection-start-column="12" selection-end-line="636" selection-end-column="12" />
-              <folding>
-                <element signature="e#23075#23169#0#PHP" />
-                <element signature="e#23226#23731#0#PHP" />
-              </folding>
+            <state relative-caret-position="378">
+              <caret line="240" column="25" lean-forward="true" selection-start-line="240" selection-start-column="25" selection-end-line="240" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -138,8 +128,8 @@
       <find>getAll</find>
       <find>0</find>
       <find>FETCH_ASSOC</find>
-      <find>haveSession</find>
       <find>getAlphabetiqueWord</find>
+      <find>haveSession</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -156,8 +146,11 @@
         <option value="$PROJECT_DIR$/composant/com_IAintegration/controllerIAIntegration.php" />
         <option value="$PROJECT_DIR$/composant/com_IAintegration/IAintegration.php" />
         <option value="$PROJECT_DIR$/composant/com_IAintegration/IAintegration.js" />
-        <option value="$PROJECT_DIR$/services/lib.php" />
         <option value="$PROJECT_DIR$/services/lib.class.php" />
+        <option value="$PROJECT_DIR$/composant/com_collection/controlerCollection.php" />
+        <option value="$PROJECT_DIR$/composant/com_collection/collection.php" />
+        <option value="$PROJECT_DIR$/services/lib.php" />
+        <option value="$PROJECT_DIR$/composant/com_collection/collection.js" />
         <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
@@ -209,7 +202,7 @@
               <item name="centralize" type="b2602c69:ProjectViewProjectNode" />
               <item name="centralize" type="462c0819:PsiDirectoryNode" />
               <item name="composant" type="462c0819:PsiDirectoryNode" />
-              <item name="com_collected_not_production" type="462c0819:PsiDirectoryNode" />
+              <item name="com_collection" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -256,7 +249,8 @@
       <option name="presentableId" value="Default" />
       <updated>1544443490699</updated>
       <workItem from="1544443496692" duration="16417000" />
-      <workItem from="1544516213729" duration="15748000" />
+      <workItem from="1544516213729" duration="18875000" />
+      <workItem from="1544601716091" duration="290000" />
     </task>
     <task id="LOCAL-00001" summary="Readme updating">
       <created>1544443868272</created>
@@ -272,17 +266,24 @@
       <option name="project" value="LOCAL" />
       <updated>1544444992276</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Modification de la page index">
+      <created>1544542451667</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1544542451667</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32165000" />
+    <option name="totallyTimeSpent" value="35582000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25302014" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18724832" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -313,7 +314,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Readme updating" />
     <MESSAGE value="Create the integration system database" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create the integration system database" />
+    <MESSAGE value="Modification de la page index" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modification de la page index" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/readme.md">
@@ -388,10 +390,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/composant/com_IAintegration/IAintegration.js">
+    <entry file="file://$PROJECT_DIR$/composant/com_IAintegration/controllerIAIntegration.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="26" column="98" selection-start-line="26" selection-start-column="98" selection-end-line="26" selection-end-column="98" />
+        <state relative-caret-position="408">
+          <caret line="24" column="14" lean-forward="true" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -402,35 +404,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/services/lib.php">
+    <entry file="file://$PROJECT_DIR$/composant/com_IAintegration/IAintegration.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="3874" column="26" lean-forward="true" selection-start-line="3874" selection-start-column="26" selection-end-line="3874" selection-end-column="26" />
+        <state relative-caret-position="423">
+          <caret line="64" column="1" lean-forward="true" selection-start-line="45" selection-start-column="1" selection-end-line="64" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/services/lib.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="636" column="12" selection-start-line="636" selection-start-column="12" selection-end-line="636" selection-end-column="12" />
-          <folding>
-            <element signature="e#23075#23169#0#PHP" />
-            <element signature="e#23226#23731#0#PHP" />
-          </folding>
+        <state relative-caret-position="10557">
+          <caret line="621" column="30" selection-start-line="621" selection-start-column="30" selection-end-line="621" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/composant/com_IAintegration/controllerIAIntegration.php">
+    <entry file="file://$PROJECT_DIR$/services/lib.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="14" lean-forward="true" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+        <state relative-caret-position="15419">
+          <caret line="907" column="14" selection-start-line="907" selection-start-column="14" selection-end-line="907" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composant/com_collection/collection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1088">
+          <caret line="64" column="79" selection-start-line="64" selection-start-column="66" selection-end-line="64" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composant/com_collection/controlerCollection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="901">
+          <caret line="53" column="99" selection-start-line="53" selection-start-column="4" selection-end-line="53" selection-end-column="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composant/com_collection/collection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="884">
+          <caret line="52" column="42" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="232" column="15" selection-start-line="232" selection-start-column="15" selection-end-line="232" selection-end-column="15" />
+        <state relative-caret-position="378">
+          <caret line="240" column="25" lean-forward="true" selection-start-line="240" selection-start-column="25" selection-end-line="240" selection-end-column="25" />
         </state>
       </provider>
     </entry>

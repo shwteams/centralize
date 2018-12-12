@@ -2,7 +2,7 @@ var url = "composant/com_collection/controlerCollection.php";
 var datatable = "";
 $(function () {
     getAllCollection("");
-
+    getAlphabetiqueWord();
     $('#modal_edit_key').submit(function (e) {
         e.preventDefault();haveSession();
 
@@ -49,13 +49,33 @@ $(function () {
         }
     });
 
+    $('#add_file_form').submit(function (e) {
+        e.preventDefault();//haveSession();
+        var str_LETTRAGE = $('#add_file_form #str_LETTRAGE_FILE').val();
+        var str_NUMERO_POLICE = $('#add_file_form #str_NUMERO_POLICE_FILE').val();
+        var int_PRIME_TTC = $('#add_file_form #int_PRIME_TTC_FILE').val();
+        var dt_EFFET = $('#add_file_form #dt_EFFET_FILE').val();
+        var dt_ECHEANCE = $('#add_file_form #dt_ECHEANCE_FILE').val();
+
+        if (str_LETTRAGE == "" || str_NUMERO_POLICE == "" || int_PRIME_TTC == "" || dt_EFFET == "" || dt_ECHEANCE == "" ) {
+            swal({
+                title: "Echec",
+                text: "Veuillez remplir tous les champs",
+                type: "error",
+                confirmButtonText: "Ok"
+            });
+            return false;
+        } else {
+            //console.log("add table")
+            addLettrage();
+        }
+    });
+
     $('.btn[id="modal_add_key"]').click(function () {
-        /*$('#modal_edit_key #str_NAME').val("");
-         $('#modal_edit_key #int_NUMBER_PLACE').val("");*/
         $('.modal[id="modal_add_key"]').modal('show');
-        $('#modal_add_key select').select2({
-            language: "fr"
-        });
+    });
+    $('.btn[id="modal_add_file"]').click(function () {
+        $('.modal[id="modal_add_file"]').modal('show');
     });
     $('.date_timepicker_start').datetimepicker({
         format:'Y-m-d',
@@ -76,8 +96,64 @@ $(function () {
         timepicker:false
     });
 });
+function addLettrage() {
+    var form = $('#add_file_form').get(0);
+    var formData = new FormData(form);
+    $.ajax({
+        type		: 'POST', // define the type of HTTP verb we want to use (POST for our form)
+        url		: url, // the url where we want to POST
+        data		: formData, // our data object
+        dataType	: 'text', // what type of data do we expect back from the server
+        processData: false,
+        contentType: false,
+        success: function (response) {
+            var obj = $.parseJSON(response);
+            if (obj[0].code_statut == "1")
+            {
+                swal({
+                    title: "Opération réussie!",
+                    text: obj[0].results,
+                    type: "success",
+                    confirmButtonText: "Ok"
+                });
+                $('#contenue-application .modal').modal('hide');
+                if ($.fn.DataTable.isDataTable('#examples')) {
+                    if ($.fn.DataTable.isDataTable('#examples')) {
+                        datatable.destroy();
+                    }
+                }
+            } else {
+                $('#save_file').removeClass('hidden');
+                swal({
+                    title: "Echec de l'opéraion",
+                    text: obj[0].results,
+                    type: "error",
+                    confirmButtonText: "Ok"
+                });
+                $('#contenue-application .modal').modal('hide');
+            }
+        }
+    });
+}
+function getAlphabetiqueWord(){
+    var task = "getAlphabetiqueWord";
+    $.get(url+"?task="+task, function(json, textStatus){
+        var obj = $.parseJSON(json);
+        if (obj[0].code_statut == "1")
+        {
+            var results = obj[0].results;
 
-
+            if (obj[0].results.length > 0)
+            {
+                $.each(results, function (i, value)//
+                {
+                    var option = $('<option value="' + results[i].numRow + '">'+results[i].str_WORD+'</tr>');
+                    $('.ma_liste').append(option);
+                });
+            }
+        }
+    });
+}
 function getAllCollection(str_COLLECTION_ID){
     var task = "getAllCollection";
     

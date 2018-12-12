@@ -23,6 +23,9 @@ if (isset($_GET["task"])) {
         $str_COLLECTION_ID = $_GET["str_COLLECTION_ID"];
         deleteCollection($str_COLLECTION_ID, $db);
     }
+    else if ($task == "getAlphabetiqueWord"){
+        getAlphabetiqueWord();
+    }
 } 
 else if (isset($_POST['addCollection'])){
     $str_COLLECTION_ID = "";
@@ -41,4 +44,12 @@ else if (isset($_POST['editCollection'])) {
     $dt_EFFET = htmlentities(trim($_POST['dt_EFFET']));
     $dt_ECHEANCE = htmlentities(trim($_POST['dt_ECHEANCE']));
     editCollection($str_COLLECTION_ID, $str_LETTRAGE, $str_NUMERO_POLICE, $int_PRIME_TTC, $dt_EFFET, $dt_ECHEANCE, $db);
+}
+else if (isset($_POST['addLettrageXLS'])) {
+    $str_LETTRAGE = htmlentities(trim($_POST['str_LETTRAGE_FILE']));
+    $str_NUMERO_POLICE = htmlentities(trim($_POST['str_NUMERO_POLICE_FILE']));
+    $int_PRIME_TTC = htmlentities(trim($_POST['int_PRIME_TTC_FILE']));
+    $dt_EFFET = htmlentities(trim($_POST['dt_EFFET_FILE']));
+    $dt_ECHEANCE = htmlentities(trim($_POST['dt_ECHEANCE_FILE']));
+    addLettrageXLS($str_LETTRAGE, $str_NUMERO_POLICE, $int_PRIME_TTC, $dt_EFFET, $dt_ECHEANCE, $db);
 }

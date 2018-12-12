@@ -23,6 +23,11 @@ class Collection {
                 <div class="panel-heading">
                     Liste des encaissements
                     <div class="pull-right">
+                        <button type="button" class="btn btn-default btn-outline btn-sm" id="modal_add_file" data-toggle="modal">
+                            <i class="fa fa-file-excel-o"></i> Intégration
+                        </button>
+                    </div>
+                    <div class="pull-right">
                         <button type="button" class="btn btn-danger btn-outline btn-sm" id="modal_add_key" data-toggle="modal">
                             <i class="fa fa-plus"></i> Ajouter
                         </button>
@@ -49,6 +54,73 @@ class Collection {
                 </div>
             </div>
         </div>
+        <div class="modal modal-success fade" id="modal_add_file" role="dialog">
+            <div class="modal-dialog ">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Veuillez sélectionner un CSV ayant l'entête à la ligne 1</h4>
+                    </div> 
+                    <form class="form-horizontal" role="form" id="add_file_form">
+                        <div class="modal-body">
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <div class="col-xs-12 col-xs-offset-2" >
+                                        <input type="file" accept=".csv" name="str_ILLUSTRATION" class="str_ILLUSTRATION" data-buttonText="Charger fichier utilisateurs" data-buttonName="btn-primary" data-iconName="glyphicon glyphicon-inbox" data-buttonBefore="true" data-placeholder="Aucun fichier selectionné" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="str_LETTRAGE_FILE" class="col-sm-4 control-label">Lettrage <span class="require">*</span> :</label>
+                                    <div class="col-sm-8">
+                                        <select name="str_LETTRAGE_FILE" id="str_LETTRAGE_FILE" class="ma_liste" style="width: 100%;">
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="str_NUMERO_POLICE_FILE" class="col-sm-4 control-label">Numéro de police <span class="require">*</span> :</label>
+                                    <div class="col-sm-8">
+                                        <select name="str_NUMERO_POLICE_FILE" id="str_NUMERO_POLICE_FILE" class="ma_liste" style="width: 100%;">
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="int_PRIME_TTC_FILE" class="col-sm-4 control-label">Montant <span class="require">*</span> :</label>
+                                    <div class="col-sm-8">
+                                        <select name="int_PRIME_TTC_FILE" id="int_PRIME_TTC_FILE" class="ma_liste" style="width: 100%;">
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="dt_EFFET_FILE" class="col-sm-4 control-label">Date effet <span class="require">*</span> :</label>
+                                    <div class="col-sm-8">
+                                        <select name="dt_EFFET_FILE" id="dt_EFFET_FILE" class="ma_liste" style="width: 100%;">
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="dt_ECHEANCE_FILE" class="col-sm-4 control-label">Date échéance <span class="require">*</span> :</label>
+                                    <div class="col-sm-8">
+                                        <select name="dt_ECHEANCE_FILE" id="dt_ECHEANCE_FILE" class="ma_liste" style="width: 100%;">
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="hidden" name="addLettrageXLS" id="addLettrageXLS">
+                            <button type="submit" class="btn btn-warning pull-right" id="saved" style="margin-left: 3px;">Enregistrer</button>
+                            <button type="reset" class="btn btn-default pull-right" data-dismiss="modal">Annuler</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
         <div class="modal modal-success fade" id="modal_add_key" role="dialog">
             <div class="modal-dialog ">
                 <!-- Modal content-->
@@ -56,7 +128,7 @@ class Collection {
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">Ajouter</h4>
-                    </div> 
+                    </div>
                     <form class="form-horizontal" role="form" id="add_key_form">
                         <div class="modal-body">
                             <div class="box-body">

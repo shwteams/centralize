@@ -902,6 +902,152 @@ CONTIENT TOUTES LES FONCTIONS DE MON APPLICATIONS
     function getAlphabetiqueWord(){
         Lib::getXLSrow();
     }
+    function addLettrageXLS($str_LETTRAGE, $str_NUMERO_POLICE, $int_PRIME_TTC, $dt_EFFET, $dt_ECHEANCE, $db)
+    {
+        echo $str_LETTRAGE." ".$str_NUMERO_POLICE." ".$int_PRIME_TTC." ".$dt_EFFET." ".$dt_ECHEANCE;
+        die();
+
+        date_default_timezone_set('Europe/London');
+        $db->beginTransaction();
+        set_time_limit(0);
+        $cpt_erreur = 0;
+        $cpt = 0;
+        $message_err = "";
+        $arrayJson = array();
+        $message = "";
+        $code_statut = "";
+        $str_STATUT = "enable";
+        if (isset($_FILES['str_ILLUSTRATION']) && $_FILES['str_ILLUSTRATION']['error'] == 0) {
+            //Testons la taille des fichiers par rapport à 2Mo = 2000000 octets
+            if ($_FILES['str_ILLUSTRATION']['size'] <= 100000000) {
+                $str_ILLUSTRATION = basename($_FILES['str_ILLUSTRATION']['name']);
+                $extention = strtolower(substr(strrchr($_FILES['str_ILLUSTRATION']['name'], '.'), 1));
+                $nom_crypter = sha1($str_ILLUSTRATION);
+                $str_ILLUSTRATION = "documents/" . $nom_crypter . "." . $extention;
+                $Resultmove = move_uploaded_file($_FILES['str_ILLUSTRATION']['tmp_name'], $str_ILLUSTRATION);
+                $fileErreur = "documents/" . $nom_crypter . "-" . date("Y-m-d") . "-2-{$_SESSION['str_SECURITY_ID']}.err";
+                $fichiers = fopen($fileErreur, "w");
+                $fileSucces = "documents/" . $nom_crypter . "-" . date("Y-m-d") . "-2-{$_SESSION['str_SECURITY_ID']}.log";
+                $fichiersSucces = fopen($fileSucces, "w");
+                if ($fichiers == false)
+                    die ("Impossible de creer le fichier");
+                if ($fichiersSucces == false)
+                    die ("Impossible de creer le fichier");
+
+                if ($extention === "csv") {
+                    //ouverture du fichier
+                    if (($handle = fopen($str_ILLUSTRATION, "r")) !== FALSE) {
+                        //lecture du contenue du fichier
+                        //$i = 0;
+                        while (($data = fgetcsv($handle, 10000, ";")) !== FALSE) {
+                            //lecture des données
+                            $str_REVUE_ID = RandomString();
+
+                            if ($i > 0) {
+                                $dt_DATE_EFFET = $data[Lib::getFieldNumber($dt_DATE_EFFET)];
+                                $dt_DATE_EFFET = strtotime($dt_DATE_EFFET);
+                                $dt_DATE_EFFETS = date($format = "Y-m-d", $dt_DATE_EFFET);
+                                $dt_DATE_FIN_EFFET = $data[Lib::getFieldNumber($dt_DATE_FIN_EFFET)];
+                                $dt_DATE_FIN_EFFET = strtotime($dt_DATE_FIN_EFFET);
+                                $dt_DATE_FIN_EFFETS = date($format = "Y-m-d", $dt_DATE_FIN_EFFET);
+                                $dt_DATE = $data[Lib::getFieldNumber($dt_DATE)];
+                                $dt_DATE = strtotime($dt_DATE);
+                                $dt_DATES = date($format = "Y-m-d", $dt_DATE);
+                                $dt_SURVENANCE = $data[Lib::getFieldNumber($dt_SURVENANCE)];
+                                $dt_SURVENANCE = strtotime($dt_SURVENANCE);
+                                $dt_SURVENANCES = date($format = "Y-m-d", $dt_SURVENANCE);
+                            }
+
+
+                            $str_BRANCHES = $data[Lib::getFieldNumber($str_BRANCHE)];
+                            var_dump($str_BRANCHE, $str_BRANCHES);
+                            $str_PRODUITS = $data[Lib::getFieldNumber($str_PRODUIT)];
+                            $str_NUMERO_SINISTRES = $data[Lib::getFieldNumber($str_NUMERO_SINISTRE)];
+                            $str_ORIGINS = $data[Lib::getFieldNumber($str_ORIGIN)];
+                            $str_AN_SURVS = $data[Lib::getFieldNumber($str_AN_SURV)];
+                            $str_ANCPOLICES = $data[Lib::getFieldNumber($str_ANCPOLICE)];
+                            $str_CLIENTS = $data[Lib::getFieldNumber($str_CLIENT)];
+                            $str_ETATS = $data[Lib::getFieldNumber($str_ETAT)];
+                            $str_GARANTIES = $data[Lib::getFieldNumber($str_GARANTIE)];
+                            $int_MT_EVALS = $data[Lib::getFieldNumber($int_MT_EVAL)];
+                            $int_CUMUL_PAYES = $data[Lib::getFieldNumber($int_CUMUL_PAYE)];
+                            $int_REGLEMENT_EXERCICES = $data[Lib::getFieldNumber($int_REGLEMENT_EXERCICE)];
+                            var_dump(Lib::getFieldNumber($int_PROVISION_FIN));
+                            $int_PROVISION_FINS = $data[Lib::getFieldNumber($int_PROVISION_FIN)];
+                            if ($i === 2) {
+                                die();
+                            }
+                            $dt_CREATED = $db->quote(gmdate("Y-m-d, H:i:s"));
+                            $sql = "INSERT INTO t_revue(int_REVUE_ID, str_REVUE_ID, dt_DATE_TRAITEMENT, str_BRANCHE, str_PRODUIT, str_NUMERO_SINISTRE, str_ORIGIN, str_AN_SURV, dt_SURVENANCE, str_ANCPOLICE, dt_DATE_EFFET, dt_DATE_FIN_EFFET, str_CLIENT, dt_DATE, str_ETAT, str_GARANTIE, int_MT_EVAL, int_CUMUL_PAYE, int_REGLEMENT_EXERCICE, int_PROVISION_FIN, int_BONI, int_MALI, str_STATUT, str_CREATED_BY, dt_CREATED, str_ETAT_ID, str_PHASE_ID) "
+                                . " VALUES (null, :str_REVUE_ID, now(), :str_BRANCHE, :str_PRODUIT, :str_NUMERO_SINISTRE, :str_ORIGIN, :str_AN_SURV, :dt_SURVENANCE, :str_ANCPOLICE, :dt_DATE_EFFET, :dt_DATE_FIN_EFFET, :str_CLIENT, :dt_DATE, :str_ETAT, :str_GARANTIE, :int_MT_EVAL, :int_CUMUL_PAYE, :int_REGLEMENT_EXERCICE, :int_PROVISION_FIN,0, 0,:str_STATUT, :str_CREATED_BY, $dt_CREATED, '', :str_PHASE_ID); ";
+
+                            if ($i > 0) {
+                                echo "########################################" . $dt_DATE_EFFET . "########################\n";
+                                if (!empty($str_NUMERO_SINISTRES) and !isExisteSinitreNumber($str_NUMERO_SINISTRES, $db)) {
+                                    //if(!empty(getIdPhase($str_PHASE, $db))){
+                                    //$str_PHASE_ID = getIdPhase($str_PHASE, $db);
+                                    $str_PHASE_ID = $str_PHASE;
+                                    try {
+                                        $stmt = $db->prepare($sql);
+                                        $stmt->BindParam(':str_REVUE_ID', $str_REVUE_ID);
+                                        $stmt->BindParam(':str_BRANCHE', $str_BRANCHES);
+                                        $stmt->BindParam(':str_PRODUIT', $str_PRODUITS);
+                                        $stmt->BindParam(':str_NUMERO_SINISTRE', $str_NUMERO_SINISTRES);
+                                        $stmt->BindParam(':str_ORIGIN', $str_ORIGINS);
+                                        $stmt->BindParam(':str_AN_SURV', $str_AN_SURVS);
+                                        $stmt->BindParam(':dt_SURVENANCE', $dt_SURVENANCES);
+                                        $stmt->BindParam(':str_ANCPOLICE', $str_ANCPOLICES);
+                                        $stmt->BindParam(':dt_DATE_EFFET', $dt_DATE_EFFETS);
+                                        $stmt->BindParam(':dt_DATE_FIN_EFFET', $dt_DATE_FIN_EFFETS);
+                                        $stmt->BindParam(':str_CLIENT', $str_CLIENTS);
+                                        $stmt->BindParam(':dt_DATE', $dt_DATES);
+                                        $stmt->BindParam(':str_ETAT', $str_ETATS);
+                                        $stmt->BindParam(':str_GARANTIE', $str_GARANTIES);
+                                        $stmt->BindParam(':int_MT_EVAL', $int_MT_EVALS);
+                                        $stmt->BindParam(':int_CUMUL_PAYE', $int_CUMUL_PAYES);
+                                        $stmt->BindParam(':int_REGLEMENT_EXERCICE', $int_REGLEMENT_EXERCICES);
+                                        $stmt->BindParam(':int_PROVISION_FIN', $int_PROVISION_FINS);
+                                        $stmt->BindParam(':str_STATUT', $str_STATUT);
+                                        $stmt->BindParam(':str_CREATED_BY', $_SESSION['str_SECURITY_ID']);
+                                        $stmt->BindParam(':str_PHASE_ID', $str_PHASE_ID);
+                                        if ($stmt->execute()) {
+                                            $cpt++;
+                                            $mt_eval += $int_MT_EVALS;
+                                            $mt_cumul += $int_CUMUL_PAYES;
+                                            $mt_reglemement += $int_REGLEMENT_EXERCICES;
+                                            $mt_provision_fin_ok += $int_PROVISION_FINS;
+                                            $message = "L'insertion a été effectué avec succès. il y a {$cpt} lignes en base de données. Il y a eu {{$cpt_erreur}} erreurs";
+                                            $code_statut = "1";
+
+                                        } else {
+                                            $cpt_erreur++;
+                                            $message = "enregistrement impossible, il y a {$cpt_erreur} erreurs";
+                                            $code_statut = "0";
+                                        }
+                                    } catch (PDOException $e) {
+                                        die("Erreur ! : " . $e->getMessage());
+                                    }
+
+                                } else {
+                                    $cpt_erreur++;
+                                    $message = "le numéro {$str_NUMERO_SINISTRES} existe deja\r\n";
+                                    $message_err .= $message;
+                                    $code_statut = "0";
+                                    fputs($fichiers, $message);
+                                }
+                            }
+                            $i++;
+                        }
+                        fclose($handle);
+                        return true;
+                    }
+                } else {
+                    $message = "Erreur, veuillez selectionner un fichier avec l'extension 'excel'\r\n";
+                    fputs($fichiers, $message);
+                }
+            }
+        }
+    }
     function getAllPartner( $str_PARTNER_ID, $db) {
         $arrayJson = array();
         $arraySql = array();
