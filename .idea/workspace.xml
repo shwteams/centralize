@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d3f1539-5f63-47b9-be0c-5e0cb73ba0ba" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/composant/com_collection/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composant/com_collection/collection.js" beforeDir="false" afterPath="$PROJECT_DIR$/composant/com_collection/collection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composant/com_collection/collection.php" beforeDir="false" afterPath="$PROJECT_DIR$/composant/com_collection/collection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composant/com_collection/controlerCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/composant/com_collection/controlerCollection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/lib.php" beforeDir="false" afterPath="$PROJECT_DIR$/services/lib.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,10 +25,11 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="gitignore" value="11" />
           <entry key="js" value="767" />
           <entry key="md" value="202" />
-          <entry key="php" value="3225" />
-          <entry key="txt" value="93" />
+          <entry key="php" value="3672" />
+          <entry key="txt" value="134" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -39,12 +37,13 @@
           <entry key="HTML" value="1" />
           <entry key="JavaScript" value="766" />
           <entry key="Markdown" value="202" />
-          <entry key="PHP" value="3225" />
-          <entry key="PLAIN_TEXT" value="93" />
+          <entry key="PHP" value="3672" />
+          <entry key="PLAIN_TEXT" value="145" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="gitignore" value="2" />
           <entry key="js" value="6" />
           <entry key="md" value="1" />
           <entry key="php" value="17" />
@@ -55,6 +54,7 @@
           <entry key="JavaScript" value="6" />
           <entry key="Markdown" value="1" />
           <entry key="PHP" value="17" />
+          <entry key="PLAIN_TEXT" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.new.class">
@@ -78,8 +78,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/services/lib.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15419">
-              <caret line="907" column="14" selection-start-line="907" selection-start-column="14" selection-end-line="907" selection-end-column="14" />
+            <state relative-caret-position="191">
+              <caret line="957" column="54" selection-start-line="957" selection-start-column="41" selection-end-line="957" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="77" lean-forward="true" selection-start-line="5" selection-start-column="77" selection-end-line="5" selection-end-column="77" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/composant/com_collection/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="10" lean-forward="true" selection-start-column="10" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -96,8 +114,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/composant/com_collection/controlerCollection.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
-              <caret line="53" column="99" selection-start-line="53" selection-start-column="4" selection-end-line="53" selection-end-column="99" />
+            <state relative-caret-position="589">
+              <caret line="53" column="9" lean-forward="true" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -111,7 +129,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="378">
@@ -130,6 +148,7 @@
       <find>FETCH_ASSOC</find>
       <find>getAlphabetiqueWord</find>
       <find>haveSession</find>
+      <find>RandomString</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -147,11 +166,13 @@
         <option value="$PROJECT_DIR$/composant/com_IAintegration/IAintegration.php" />
         <option value="$PROJECT_DIR$/composant/com_IAintegration/IAintegration.js" />
         <option value="$PROJECT_DIR$/services/lib.class.php" />
-        <option value="$PROJECT_DIR$/composant/com_collection/controlerCollection.php" />
         <option value="$PROJECT_DIR$/composant/com_collection/collection.php" />
-        <option value="$PROJECT_DIR$/services/lib.php" />
         <option value="$PROJECT_DIR$/composant/com_collection/collection.js" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/composant/com_collection/controlerCollection.php" />
+        <option value="$PROJECT_DIR$/services/lib.php" />
+        <option value="$PROJECT_DIR$/composant/com_collection/documents/.gitignore" />
+        <option value="$PROJECT_DIR$/composant/com_collection/.gitignore" />
       </list>
     </option>
   </component>
@@ -204,6 +225,18 @@
               <item name="composant" type="462c0819:PsiDirectoryNode" />
               <item name="com_collection" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="centralize" type="b2602c69:ProjectViewProjectNode" />
+              <item name="centralize" type="462c0819:PsiDirectoryNode" />
+              <item name="composant" type="462c0819:PsiDirectoryNode" />
+              <item name="com_collection" type="462c0819:PsiDirectoryNode" />
+              <item name="documents" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="centralize" type="b2602c69:ProjectViewProjectNode" />
+              <item name="centralize" type="462c0819:PsiDirectoryNode" />
+              <item name="db" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -215,6 +248,14 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\developpements\www\centralize\composant\com_collection" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\developpements\www\centralize\composant\com_collection\documents" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -250,7 +291,7 @@
       <updated>1544443490699</updated>
       <workItem from="1544443496692" duration="16417000" />
       <workItem from="1544516213729" duration="18875000" />
-      <workItem from="1544601716091" duration="290000" />
+      <workItem from="1544601716091" duration="6480000" />
     </task>
     <task id="LOCAL-00001" summary="Readme updating">
       <created>1544443868272</created>
@@ -273,11 +314,18 @@
       <option name="project" value="LOCAL" />
       <updated>1544542451667</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Update of fonction session out disconnect">
+      <created>1544602200590</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1544602200590</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35582000" />
+    <option name="totallyTimeSpent" value="41772000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -295,9 +343,9 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32907802" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32907802" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49932885" weight="0.32907802" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49932885" weight="0.32907802" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50067115" side_tool="true" visible="true" weight="0.32907802" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32907802" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -315,7 +363,8 @@
     <MESSAGE value="Readme updating" />
     <MESSAGE value="Create the integration system database" />
     <MESSAGE value="Modification de la page index" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modification de la page index" />
+    <MESSAGE value="Update of fonction session out disconnect" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update of fonction session out disconnect" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/readme.md">
@@ -418,24 +467,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/services/lib.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15419">
-          <caret line="907" column="14" selection-start-line="907" selection-start-column="14" selection-end-line="907" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composant/com_collection/collection.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1088">
           <caret line="64" column="79" selection-start-line="64" selection-start-column="66" selection-end-line="64" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composant/com_collection/controlerCollection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="53" column="99" selection-start-line="53" selection-start-column="4" selection-end-line="53" selection-end-column="99" />
         </state>
       </provider>
     </entry>
@@ -450,6 +485,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="240" column="25" lean-forward="true" selection-start-line="240" selection-start-column="25" selection-end-line="240" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composant/com_collection/controlerCollection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="53" column="9" lean-forward="true" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/lib.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="957" column="54" selection-start-line="957" selection-start-column="41" selection-end-line="957" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="77" lean-forward="true" selection-start-line="5" selection-start-column="77" selection-end-line="5" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composant/com_collection/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="10" lean-forward="true" selection-start-column="10" selection-end-column="10" />
         </state>
       </provider>
     </entry>

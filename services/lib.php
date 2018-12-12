@@ -902,11 +902,8 @@ CONTIENT TOUTES LES FONCTIONS DE MON APPLICATIONS
     function getAlphabetiqueWord(){
         Lib::getXLSrow();
     }
-    function addLettrageXLS($str_LETTRAGE, $str_NUMERO_POLICE, $int_PRIME_TTC, $dt_EFFET, $dt_ECHEANCE, $db)
+    function addLettrageXLS($str_LETTRAGE, $str_NUMERO_POLICE, $int_MONTANT, $dt_EFFET, $dt_ECHEANCE, $db)
     {
-        echo $str_LETTRAGE." ".$str_NUMERO_POLICE." ".$int_PRIME_TTC." ".$dt_EFFET." ".$dt_ECHEANCE;
-        die();
-
         date_default_timezone_set('Europe/London');
         $db->beginTransaction();
         set_time_limit(0);
@@ -938,42 +935,37 @@ CONTIENT TOUTES LES FONCTIONS DE MON APPLICATIONS
                     //ouverture du fichier
                     if (($handle = fopen($str_ILLUSTRATION, "r")) !== FALSE) {
                         //lecture du contenue du fichier
-                        //$i = 0;
+                        $i = 0;
                         while (($data = fgetcsv($handle, 10000, ";")) !== FALSE) {
                             //lecture des données
-                            $str_REVUE_ID = RandomString();
+                            //$id_ENCAISSEMENT = RandomString();
 
                             if ($i > 0) {
-                                $dt_DATE_EFFET = $data[Lib::getFieldNumber($dt_DATE_EFFET)];
-                                $dt_DATE_EFFET = strtotime($dt_DATE_EFFET);
-                                $dt_DATE_EFFETS = date($format = "Y-m-d", $dt_DATE_EFFET);
-                                $dt_DATE_FIN_EFFET = $data[Lib::getFieldNumber($dt_DATE_FIN_EFFET)];
-                                $dt_DATE_FIN_EFFET = strtotime($dt_DATE_FIN_EFFET);
-                                $dt_DATE_FIN_EFFETS = date($format = "Y-m-d", $dt_DATE_FIN_EFFET);
-                                $dt_DATE = $data[Lib::getFieldNumber($dt_DATE)];
-                                $dt_DATE = strtotime($dt_DATE);
-                                $dt_DATES = date($format = "Y-m-d", $dt_DATE);
-                                $dt_SURVENANCE = $data[Lib::getFieldNumber($dt_SURVENANCE)];
-                                $dt_SURVENANCE = strtotime($dt_SURVENANCE);
-                                $dt_SURVENANCES = date($format = "Y-m-d", $dt_SURVENANCE);
+                                $dt_EFFETS = $data[$dt_EFFET];
+                                $dt_EFFETS = str_replace('.', '/', $dt_EFFETS);
+                                echo "effet : ".$dt_EFFETS."#->";
+                                var_dump($dt_EFFETS);
+                                $dt_EFFETS = strtotime($dt_EFFETS);
+                                $dt_EFFETS = date($format = "Y-m-d", $dt_EFFETS);
+                                echo "effet : ".$dt_EFFETS."#";
+
+                                $dt_ECHEANCES = $data[$dt_ECHEANCE];
+                                $dt_ECHEANCES = str_replace('.', '/', $dt_ECHEANCES);
+                                echo "Echeance : ".$dt_ECHEANCES."#->";
+                                var_dump($dt_ECHEANCES);
+                                $dt_ECHEANCES = strtotime($dt_ECHEANCES);
+                                echo "<br> echeance data <br/>";
+                                var_dump($dt_ECHEANCES);
+                                echo "<br>Fin cheance<br>";
+                                $dt_ECHEANCES = date($format = "Y-m-d", $dt_ECHEANCES);
+                                echo "Echeance ".$dt_ECHEANCES."#<br/>";
                             }
+                            echo "valeur i :".$i."<br/>";
 
-
-                            $str_BRANCHES = $data[Lib::getFieldNumber($str_BRANCHE)];
-                            var_dump($str_BRANCHE, $str_BRANCHES);
-                            $str_PRODUITS = $data[Lib::getFieldNumber($str_PRODUIT)];
-                            $str_NUMERO_SINISTRES = $data[Lib::getFieldNumber($str_NUMERO_SINISTRE)];
-                            $str_ORIGINS = $data[Lib::getFieldNumber($str_ORIGIN)];
-                            $str_AN_SURVS = $data[Lib::getFieldNumber($str_AN_SURV)];
-                            $str_ANCPOLICES = $data[Lib::getFieldNumber($str_ANCPOLICE)];
-                            $str_CLIENTS = $data[Lib::getFieldNumber($str_CLIENT)];
-                            $str_ETATS = $data[Lib::getFieldNumber($str_ETAT)];
-                            $str_GARANTIES = $data[Lib::getFieldNumber($str_GARANTIE)];
-                            $int_MT_EVALS = $data[Lib::getFieldNumber($int_MT_EVAL)];
-                            $int_CUMUL_PAYES = $data[Lib::getFieldNumber($int_CUMUL_PAYE)];
-                            $int_REGLEMENT_EXERCICES = $data[Lib::getFieldNumber($int_REGLEMENT_EXERCICE)];
-                            var_dump(Lib::getFieldNumber($int_PROVISION_FIN));
-                            $int_PROVISION_FINS = $data[Lib::getFieldNumber($int_PROVISION_FIN)];
+                            $int_MONTANTS = $data[$int_MONTANT];
+                            $str_NUMERO_POLICES = $data[$str_NUMERO_POLICE];
+                            $str_LETTRAGES = $data[$str_LETTRAGE];
+                            if($i>0)echo $str_LETTRAGES." ".$str_NUMERO_POLICES." ".$int_MONTANTS." ".$dt_EFFETS." ".$dt_ECHEANCES."\n\r";
                             if ($i === 2) {
                                 die();
                             }
@@ -981,7 +973,8 @@ CONTIENT TOUTES LES FONCTIONS DE MON APPLICATIONS
                             $sql = "INSERT INTO t_revue(int_REVUE_ID, str_REVUE_ID, dt_DATE_TRAITEMENT, str_BRANCHE, str_PRODUIT, str_NUMERO_SINISTRE, str_ORIGIN, str_AN_SURV, dt_SURVENANCE, str_ANCPOLICE, dt_DATE_EFFET, dt_DATE_FIN_EFFET, str_CLIENT, dt_DATE, str_ETAT, str_GARANTIE, int_MT_EVAL, int_CUMUL_PAYE, int_REGLEMENT_EXERCICE, int_PROVISION_FIN, int_BONI, int_MALI, str_STATUT, str_CREATED_BY, dt_CREATED, str_ETAT_ID, str_PHASE_ID) "
                                 . " VALUES (null, :str_REVUE_ID, now(), :str_BRANCHE, :str_PRODUIT, :str_NUMERO_SINISTRE, :str_ORIGIN, :str_AN_SURV, :dt_SURVENANCE, :str_ANCPOLICE, :dt_DATE_EFFET, :dt_DATE_FIN_EFFET, :str_CLIENT, :dt_DATE, :str_ETAT, :str_GARANTIE, :int_MT_EVAL, :int_CUMUL_PAYE, :int_REGLEMENT_EXERCICE, :int_PROVISION_FIN,0, 0,:str_STATUT, :str_CREATED_BY, $dt_CREATED, '', :str_PHASE_ID); ";
 
-                            if ($i > 0) {
+                            $i++;
+                            if ($i > 0) /*
                                 echo "########################################" . $dt_DATE_EFFET . "########################\n";
                                 if (!empty($str_NUMERO_SINISTRES) and !isExisteSinitreNumber($str_NUMERO_SINISTRES, $db)) {
                                     //if(!empty(getIdPhase($str_PHASE, $db))){
@@ -1035,7 +1028,7 @@ CONTIENT TOUTES LES FONCTIONS DE MON APPLICATIONS
                                     $code_statut = "0";
                                     fputs($fichiers, $message);
                                 }
-                            }
+                            }*/
                             $i++;
                         }
                         fclose($handle);
